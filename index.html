@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <h2>Como funciona?</h2>
+    <p>Aplique um valor numérico dentro da caixinha do Valor X, e depois aplique outro número na caixinha do Valor Y, por fim, escolha as opções de operações e clique apenas uma vez em cima do sinal, após isso, irá aparecer a resposta da conta na caixinha vazia. </p>
+    <br><br>
+    <label>Valor X:</label>
+    <input type="number" id="x">
+    <br><br>
+    <label>Valor de Y:</label>
+    <input type="number" id="y">
+    <br><br>
+    <label>Resultado:</label>
+    <input type ="number" id="z" readonly>
+    <br><br>
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">*</button>
+    <button onclick="dividir()">%</button>
+    <script>
+        const somar = function(){
+            let x = document.getElementById('x').value
+            let y = document.getElementById('y').value
+            z = parseFloat(x) + parseFloat(y)
+            document.getElementById('z').value = z
+        }
+        const subtrair = function(){
+            let x = document.getElementById('x').value
+            let y = document.getElementById('y').value
+            z = parseFloat(x) - parseFloat(y)
+            document.getElementById('z').value = z
+        }
+        const multiplicar = function(){
+            let x = document.getElementById('x').value
+            let y = document.getElementById('y').value
+            z = parseFloat(x) * parseFloat(y)
+            document.getElementById('z').value = z
+        }
+        const dividir = function(){
+            let x = document.getElementById('x').value
+            let y = document.getElementById('y').value
+            z = parseFloat(x) / parseFloat(y)
+            document.getElementById('z').value = z
+        }
+    </script>
+    <footer>Desenvolvido pelo Francisco Alexandre Fernandes Batalha no Curso de Analise e Desenvolvimento de Sistemas</footer>
+    <P id="RedesSociais">Confira mais projetos meus no <a href="https://github.com/FranciscoBatalha">Github</a></P>
+</body>
+</html>
