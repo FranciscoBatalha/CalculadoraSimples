@@ -12,7 +12,8 @@
     <h2>Como funciona?</h2>
     <p>Aplique um valor numérico dentro da caixinha do Valor X, e depois aplique outro número na caixinha do Valor Y, por fim, escolha as opções de operações e clique apenas uma vez em cima do sinal, após isso, irá aparecer a resposta da conta na caixinha vazia. </p>
     <br><br>
-    <label>Valor X:</label>
+    <div>
+    <label>Valor de X:</label>
     <input type="number" id="x">
     <br><br>
     <label>Valor de Y:</label>
@@ -21,10 +22,17 @@
     <label>Resultado:</label>
     <input type ="number" id="z" readonly>
     <br><br>
+    </div>
+    <div>
     <button onclick="somar()">+</button>
     <button onclick="subtrair()">-</button>
     <button onclick="multiplicar()">*</button>
     <button onclick="dividir()">%</button>
+    <button onclick="potenciação()">^</button>
+    <button onclick="raizQuadrada()">√</button>
+    <button onclick="restoDeDivisão()">//</button>
+    <button onclick="apagaNúmero()">C</button>
+    </div>
     <script>
         const somar = function(){
             let x = document.getElementById('x').value
@@ -50,7 +58,31 @@
             z = parseFloat(x) / parseFloat(y)
             document.getElementById('z').value = z
         }
+        const potenciação = function(){
+            let x = document.getElementById ('x').value
+            let y = document.getElementById ('y').value
+            z = Math.pow (parseFloat(x),parseFloat(y))
+            document.getElementById('z').value = z
+        }
+        const raizQuadrada = function(){
+            let x = document.getElementById ('x').value
+            let y = document.getElementById ('y').value
+            z = Math.sqrt (parseFloat(x))
+            document.getElementById('z').value = z
+        }
+        const restoDeDivisão = function(){
+        let x = document.getElementById ('x').value
+        let y = document.getElementById ('y').value
+        z = parseFloat(x) % parseFloat(y)
+        document.getElementById('z').value = z
+        }
+        const apagaNúmero = function(){
+            document.getElementById ('x').value = ""
+            document.getElementById ('y').value = ""
+            document.getElementById('z').value = ""
+        }
     </script>
+    <br><br>
     <footer>Desenvolvido pelo Francisco Alexandre Fernandes Batalha no Curso de Analise e Desenvolvimento de Sistemas</footer>
     <P id="RedesSociais">Confira mais projetos meus no <a href="https://github.com/FranciscoBatalha">Github</a></P>
 </body>
